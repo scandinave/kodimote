@@ -26,6 +26,23 @@
         "*.a"
     ],
     "modules": [
+    	{
+            "name" : "libhandy",
+            "buildsystem" : "meson",
+	    "builddir": true,
+	    "config-opts": [
+		"-Dglade_catalog=disabled",
+		"-Dexamples=false",
+		"-Dtests=false",
+		"-Dvapi=false"
+	    ],
+            "sources" : [
+                {
+                  "type" : "git",
+                  "url" : "https://source.puri.sm/Librem5/libhandy.git"
+                }
+            ]
+        },
         {
             "name": "kodimote",
             "builddir": true,

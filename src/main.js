@@ -20,12 +20,14 @@ pkg.initGettext();
 pkg.initFormat();
 pkg.require({
   'Gio': '2.0',
-  'Gtk': '3.0'
+  'Gtk': '3.0',
+  'Handy': '0.0',
 });
 
-const { Gio, Gtk } = imports.gi;
+const { Gio, Gtk, Handy } = imports.gi;
 
 const { KodimoteWindow } = imports.window;
+Handy.init(null);
 
 function main(argv) {
     const application = new Gtk.Application({
