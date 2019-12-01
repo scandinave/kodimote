@@ -1,0 +1,7 @@
+data/info.scandi.kodimote.desktop.in
+data/info.scandi.kodimote.appdata.xml.in
+data/info.scandi.kodimote.gschema.xml
+src/window.ui
+src/main.js
+src/window.js
+
