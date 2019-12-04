@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <requires lib="libhandy" version="0.0"/>
   <template class="KodimoteWindow" parent="GtkApplicationWindow">
+    <property name="default-width">600</property>
+    <property name="default-height">300</property>
     <property name="can_focus">False</property>
     <child type="titlebar">
       <object class="HdyTitleBar" id="main-menu">
@@ -14,7 +14,7 @@
           <object class="HdyLeaflet" id="header">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="visible_child">main_header</property>
+            <property name="visible_child">content_header</property>
             <property name="mode_transition_type">slide</property>
             <property name="child_transition_type">slide</property>
             <child>
@@ -42,13 +42,11 @@
               </packing>
             </child>
             <child>
-              <object class="GtkHeaderBar" id="main_header">
+              <object class="GtkHeaderBar" id="content_header">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
-                <property name="title">Kodimote</property>
-                <property name="subtitle" translatable="yes" context="Display the state of the kodi media center">kodi_state</property>
-                <property name="spacing">10</property>
+                <property name="title" translatable="yes">Kodimote</property>
                 <property name="show_close_button">True</property>
                 <child>
                   <object class="GtkRevealer">
@@ -56,19 +54,17 @@
                     <property name="can_focus">False</property>
                     <property name="transition_type">crossfade</property>
                     <property name="transition_duration">0</property>
-                    <property name="reveal_child">True</property>
                     <child>
-                      <object class="GtkButton" id="menu-toogle">
+                      <object class="GtkButton">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="receives_default">False</property>
-                        <property name="relief">none</property>
                         <signal name="clicked" handler="on_menu_clicked" swapped="no"/>
                         <child>
-                          <object class="GtkImage" id="menu-toogle-icon">
+                          <object class="GtkImage">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon_name">open-menu-symbolic</property>
+                            <property name="icon_name">format-justify-fill</property>
                             <property name="icon_size">1</property>
                           </object>
                         </child>
@@ -78,26 +74,6 @@
                       </object>
                     </child>
                   </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="wol-button">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="relief">none</property>
-                    <property name="image_position">right</property>
-                    <child>
-                      <object class="GtkImage">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="icon_name">system-shutdown-symbolic</property>
-                      </object>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="pack_type">end</property>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
               </object>
               <packing>
@@ -113,3 +89,4 @@
     </child>
   </template>
 </interface>
+
