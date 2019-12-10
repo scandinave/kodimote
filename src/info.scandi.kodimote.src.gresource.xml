@@ -3,5 +3,6 @@
   <gresource prefix="/info/scandi/kodimote/js">
     <file>main.js</file>
     <file>window.js</file>
+    <file>ui/titlebar.js</file>
   </gresource>
 </gresources>

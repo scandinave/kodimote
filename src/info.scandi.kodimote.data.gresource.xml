@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/info/scandi/kodimote">
     <file>window.ui</file>
+    <file>ui/titlebar.ui</file>
   </gresource>
 </gresources>

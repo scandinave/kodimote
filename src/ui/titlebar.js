@@ -1,5 +1,5 @@
 #!/usr/bin/gjs
-/* window.js
+/* titlebar.js
  *
  * Copyright 2019 scandinave
  *
@@ -16,17 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+const { GObject, Gtk, Handy } = imports.gi;
 
-var { GObject, Gtk } = imports.gi;
-var { Titlebar } = imports.ui.titlebar;
 
-var KodimoteWindow = GObject.registerClass({
-    GTypeName: 'KodimoteWindow',
-    Template: 'resource:///info/scandi/kodimote/window.ui'
-}, class KodimoteWindow extends Gtk.ApplicationWindow {
-    _init(application) {
-        super._init({ application });
-        this.set_titlebar(new Titlebar());
+var Titlebar = GObject.registerClass({
+    GTypeName: 'Titlebar',
+    Template: 'resource:///info/scandi/kodimote/ui/titlebar.ui'
+}, class Titlebar extends Gtk.Bin {
 
-    }
 });
+
+
+
