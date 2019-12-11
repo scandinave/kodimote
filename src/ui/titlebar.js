@@ -21,8 +21,25 @@ const { GObject, Gtk, Handy } = imports.gi;
 
 var Titlebar = GObject.registerClass({
     GTypeName: 'Titlebar',
-    Template: 'resource:///info/scandi/kodimote/ui/titlebar.ui'
-}, class Titlebar extends Gtk.Bin {
+    Template: 'resource:///info/scandi/kodimote/ui/titlebar.ui',
+    InternalChildren: [
+        'main-menu',
+        'sidebar-header',
+    ],
+    Properties: {
+    },
+    Signals: {
+    }
+}, class Titlebar extends Handy.TitleBar {
+
+  _init(params) {
+    super._init(params);
+  }
+
+  /*get sidebarHeader() {
+    //log(this._'sidebar-header');
+    return this._'sidebar-header';
+  }*/
 
 });
 
