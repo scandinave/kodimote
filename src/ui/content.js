@@ -1,4 +1,5 @@
-/* main.js
+#!/usr/bin/gjs
+/* content.js
  *
  * Copyright 2019 scandinave
  *
@@ -15,36 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+const { GObject, Handy } = imports.gi;
 
-pkg.initGettext();
-pkg.initFormat();
-pkg.require({
-  'Gio': '2.0',
-  'Gtk': '3.0',
-  'Handy': '0.0',
+
+var Content = GObject.registerClass({
+    GTypeName: 'Content',
+    Template: 'resource:///info/scandi/kodimote/ui/content.ui',
+    InternalChildren: [
+        'sidebarMenu',
+        'stackContent'
+    ],
+    Properties: {
+    },
+    Signals: {
+    }
+}, class Content extends Handy.Leaflet {
+
+  _init(params) {
+    super._init(params);
+  }
+
+  get sidebarMenu() {
+    return this._sidebarMenu;
+  }
+
+  get stackContent() {
+    return this._stackContent;
+  }
 });
 
-const { Gio, Gtk, Handy } = imports.gi;
-
-const { KodimoteWindow } = imports.window;
-Handy.init(null);
-
-function main(argv) {
-    const application = new Gtk.Application({
-        application_id: 'info.scandi.kodimote',
-        flags: Gio.ApplicationFlags.FLAGS_NONE,
-    });
-
-    application.connect('activate', app => {
-        let activeWindow = app.activeWindow;
-        
-        if (!activeWindow) {
-            activeWindow = new KodimoteWindow(app);
-
-        }
-
-        activeWindow.present();
-    });
-
-    return application.run(argv);
-}

@@ -4,5 +4,6 @@
     <file>main.js</file>
     <file>window.js</file>
     <file>ui/titlebar.js</file>
+    <file>ui/content.js</file>
   </gresource>
 </gresources>

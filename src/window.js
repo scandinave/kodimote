@@ -19,6 +19,7 @@
 
 var { GObject, Gtk } = imports.gi;
 var { Titlebar } = imports.ui.titlebar;
+var { Content } = imports.ui.content;
 
 var KodimoteWindow = GObject.registerClass({
     GTypeName: 'KodimoteWindow',
@@ -26,7 +27,20 @@ var KodimoteWindow = GObject.registerClass({
 }, class KodimoteWindow extends Gtk.ApplicationWindow {
     _init(application) {
         super._init({ application });
-        this.set_titlebar(new Titlebar());
+        const titlebar = new Titlebar();
+        this.set_titlebar(titlebar);
+        const content = new Content()
+        this.add(content);
+
+        const headerGroup = new Gtk.SizeGroup();
+        headerGroup.set_mode(Gtk.SizeGroupMode.HORIZONTAL);
+        headerGroup.add_widget(titlebar.sidebarHeader);
+        headerGroup.add_widget(content.sidebarMenu);
+
+        const contentGroup = new Gtk.SizeGroup();
+        contentGroup.set_mode(Gtk.SizeGroupMode.HORIZONTAL);
+        contentGroup.add_widget(titlebar.mainHeader);
+        contentGroup.add_widget(content.stackContent);
 
     }
 });

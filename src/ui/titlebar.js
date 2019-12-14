@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-const { GObject, Gtk, Handy } = imports.gi;
+const { GObject, Handy } = imports.gi;
 
 
 var Titlebar = GObject.registerClass({
     GTypeName: 'Titlebar',
     Template: 'resource:///info/scandi/kodimote/ui/titlebar.ui',
     InternalChildren: [
-        'main-menu',
-        'sidebar-header',
+        'sidebarHeader',
+        'mainHeader'
     ],
     Properties: {
     },
@@ -36,10 +36,16 @@ var Titlebar = GObject.registerClass({
     super._init(params);
   }
 
-  /*get sidebarHeader() {
-    //log(this._'sidebar-header');
-    return this._'sidebar-header';
-  }*/
+  on_menu_clicked() {
+  }
+
+  get sidebarHeader() {
+    return this._sidebarHeader;
+  }
+
+  get mainHeader() {
+    return this._mainHeader;
+  }
 
 });
 

@@ -3,5 +3,6 @@
   <gresource prefix="/info/scandi/kodimote">
     <file>window.ui</file>
     <file>ui/titlebar.ui</file>
+    <file>ui/content.ui</file>
   </gresource>
 </gresources>
