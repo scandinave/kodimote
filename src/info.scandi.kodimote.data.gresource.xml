@@ -4,5 +4,7 @@
     <file>window.ui</file>
     <file>ui/titlebar.ui</file>
     <file>ui/content.ui</file>
+    <file>ui/hosts/hosts.ui</file>
+    <file>ui/hosts/hosts-item.ui</file>
   </gresource>
 </gresources>

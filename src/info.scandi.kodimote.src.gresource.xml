@@ -5,5 +5,7 @@
     <file>window.js</file>
     <file>ui/titlebar.js</file>
     <file>ui/content.js</file>
+    <file>ui/hosts/hosts.js</file>
+    <file>ui/hosts/hosts-item.js</file>
   </gresource>
 </gresources>
