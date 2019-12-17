@@ -20,6 +20,7 @@ pkg.initGettext();
 pkg.initFormat();
 pkg.require({
   'Gio': '2.0',
+  'GLib': '2.60.1',
   'Gtk': '3.0',
   'Handy': '0.0',
 });
