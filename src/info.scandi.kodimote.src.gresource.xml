@@ -6,6 +6,6 @@
     <file>ui/titlebar.js</file>
     <file>ui/content.js</file>
     <file>ui/hosts/hosts.js</file>
-    <file>ui/hosts/hosts-item.js</file>
+    <file>ui/hosts/hostsItem.js</file>
   </gresource>
 </gresources>

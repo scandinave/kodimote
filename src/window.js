@@ -21,6 +21,7 @@ var { GObject, Gtk } = imports.gi;
 var { Titlebar } = imports.ui.titlebar;
 var { Content } = imports.ui.content;
 
+
 var KodimoteWindow = GObject.registerClass({
     GTypeName: 'KodimoteWindow',
     Template: 'resource:///info/scandi/kodimote/window.ui'

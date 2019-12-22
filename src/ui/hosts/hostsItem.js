@@ -16,16 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-const { GObject, Handy } = imports.gi;
+const { GObject, Handy, Gtk } = imports.gi;
 
 
 var HostsItem = GObject.registerClass({
     GTypeName: 'HostsItem',
-    Template: 'resource:///info/scandi/kodimote/ui/hosts/hosts-item.js'
-}, class HostsItem extends Handy.ActionRow {
+    Template: 'resource:///info/scandi/kodimote/ui/hosts/hostsItem.ui',
+    InternalChildren: [
+        'title',
+        'subtitle'
+    ],
+}, class HostsItem extends Gtk.Box {
 
-  _init(params) {
-    super._init(params);
-  }
+    _init(params) {
+        super._init(params);
+    }
+
+    set title(title) {
+         this._title.label = title;
+    }
+
+    set subtitle(subtitle) {
+        this._subtitle.label = subtitle;
+    }
+
+    edit() {
+        log("action");
+    }
 });
 

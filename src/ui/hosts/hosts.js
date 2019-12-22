@@ -16,16 +16,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-const { GObject } = imports.gi;
-
+const { GObject, Gtk, Handy } = imports.gi;
+const { HostsItem } = imports.ui.hosts.hostsItem;
 
 var Hosts = GObject.registerClass({
     GTypeName: 'Hosts',
-    Template: 'resource:///info/scandi/kodimote/ui/hosts/hosts-item.js'
+    Template: 'resource:///info/scandi/kodimote/ui/hosts/hosts.ui'
 }, class Hosts extends Gtk.Box {
+
+    constructor() {
+
+    }
 
   _init(params) {
     super._init(params);
+
+    const item1 = new HostsItem();
+    item1.title = "Kodi Home";
+    item1.subtitle = "192.168.1.10";
+
+
+    const item2 = new HostsItem();
+    item2.title = "Another Kodi";
+    item2.subtitle = "192.168.1.12";
+
+    this.pack_start(item1, true, true, 0);
+    const separator = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL);
+    separator.visible = true;
+    this.pack_start(separator, false, false, 0)
+    this.pack_start(item2, true, true, 0);
   }
 });
 

@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 const { GObject, Handy } = imports.gi;
-
+var { Hosts } = imports.ui.hosts.hosts;
 
 var Content = GObject.registerClass({
     GTypeName: 'Content',
@@ -34,6 +34,7 @@ var Content = GObject.registerClass({
 
   _init(params) {
     super._init(params);
+    this._stackContent.add(new Hosts());
   }
 
   get sidebarMenu() {
