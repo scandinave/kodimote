@@ -6,5 +6,6 @@
     <file>ui/content.ui</file>
     <file>ui/hosts/hosts.ui</file>
     <file>ui/hosts/hostsItem.ui</file>
+    <file>images/kodi-icon-32.png</file>
   </gresource>
 </gresources>

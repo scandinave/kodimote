@@ -22,26 +22,11 @@ const { GObject, Handy, Gtk } = imports.gi;
 var HostsItem = GObject.registerClass({
     GTypeName: 'HostsItem',
     Template: 'resource:///info/scandi/kodimote/ui/hosts/hostsItem.ui',
-    InternalChildren: [
-        'title',
-        'subtitle'
-    ],
-}, class HostsItem extends Gtk.Box {
+}, class HostsItem extends Handy.ActionRow {
 
     _init(params) {
         super._init(params);
     }
 
-    set title(title) {
-         this._title.label = title;
-    }
-
-    set subtitle(subtitle) {
-        this._subtitle.label = subtitle;
-    }
-
-    edit() {
-        log("action");
-    }
 });
 

@@ -42,5 +42,9 @@ var Hosts = GObject.registerClass({
         this._HostsList.add(item1);
         this._HostsList.add(item2);
     }
+
+    edit(row) {
+        log(row.title);
+    }
 });
 
