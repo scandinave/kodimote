@@ -22,7 +22,8 @@ pkg.require({
   'Gio': '2.0',
   'GLib': '2.0',
   'Gtk': '3.0',
-  'Handy': '0.0'
+  'Handy': '0.0',
+  'Avahi': '0.6'
 });
 
 const { Gio, Gtk, Handy } = imports.gi;

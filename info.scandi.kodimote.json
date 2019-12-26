@@ -1,7 +1,7 @@
 {
     "app-id": "info.scandi.kodimote",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.32",
+    "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",
     "command": "info.scandi.kodimote",
     "finish-args": [
@@ -45,11 +45,20 @@
         },
         {
             "name" : "avahi",
-            "buildsystem" : "simple",
-	    "build-commands" : [
-	    	"./bootstrap.sh --disable-manpages --with-distro=none --disable-mono --disable-monodoc --disable-python --disable-qt3 --disable-qt4 --disable-core-docs --disable-gtk --disable-tests --disable-qt5 --disable-libdaemon",
-	    	"make",
-	    	"make install"
+            "buildsystem" : "autotools",
+	    "config-opts": [
+	    	"--disable-manpages",
+	    	"--with-distro=none",
+	    	"--disable-mono",
+	    	"--disable-monodoc",
+	    	"--disable-python",
+	    	"--disable-qt3",
+	    	"--disable-qt4",
+	    	"--disable-core-docs",
+	    	"--disable-gtk",
+	    	"--disable-tests",
+	    	"--disable-qt5",
+	    	"--disable-libdaemon"
 	    ],
             "sources" : [
                 {
